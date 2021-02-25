@@ -1,0 +1,20 @@
+When troubleshooting network connectivity or application-specific issues,
+one of the first things to check should be what ports are actually in use on your system and which application is listening on a specific port.
+
+This article explains how to use the netstat, ss and lsof commands to find out which services are listening on which ports.
+The instructions are applicable for all Linux and Unix-based operating systems like macOS.
+
+What is Listening Port
+Network port is identified by its number, the associated IP address, and type of the communication protocol, such as TCP or UDP.
+
+Listening port is a network port on which an application or process listens on, acting as a communication endpoint.
+
+Each listening port can be open or closed (filtered) using a firewall.
+In general terms, an open port is a network port that accepts incoming packets from remote locations.
+You can’t have two services listening to the same port on the same IP address.
+
+For example,
+if you are running an Apache web server that listens on ports 80 and 443 and you try to install Nginx ,
+the later will fail to start because the HTTP and HTTPS ports are already in use.
+Check Listening Ports with netstat
+netstat is a command-line tool that can provide information about network connections.
